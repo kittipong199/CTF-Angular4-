@@ -1,21 +1,31 @@
-<div>
 <form [formGroup]="form">
-  <div>
-    Name: <input formControlName="name">
-    <span style="color: red;" *ngIf="form.get('name').errors?.required"></span>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name*</label>
+    <input formControlName="name" type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp"
+      placeholder="Name address">
+    <span style="color: red;" *ngIf="form.get('name')?.errors?.required"></span>
+
   </div>
   <div class="form-group">
-     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <label for="exampleInputEmail1">Email*</label>
+    <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
+      aria-describedby="emailHelp" placeholder="Email address">
+    <span style="color: red;" *ngIf="form.get('eamil')?.errors?.required"></span>
+
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <label for="exampleInputPassword1">Posral address</label>
+    <input formControlName="postalAddress" type="Posral" class="form-control" id="exampleInputPosral"
+      placeholder="Posral address">
+    <span style="color: red;" *ngIf="form.get('postalAddress')?.errors?.required"></span>
   </div>
-  <div class="form-check">
-    
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Commens</label>
+    <input formControlName="comments" type="commens" class="form-control" id="exampleInputCommens"
+      placeholder="Commens">
+    <span style="color: red;"></span>
+  </div><br>
+  <button type="submit" class="btn btn-primary" (click)="submitForm()">
+    SUBMIT
+  </button>
 </form>
-</div>

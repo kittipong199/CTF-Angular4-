@@ -1,0 +1,44 @@
+<div>
+  <div class="card mx-auto py-3 px-3 my-3" style="width: 360px;">
+   <form [formGroup]="form"> 
+     <div class="row my-2">
+       <div class="col-lg-3 text-right">
+        <label class="font-weight-bold">From:</label>
+       </div>
+       <div class="col-lg-5">
+        <input class="form-control text-right" placeholder="amount" formControlName="fromAmount">
+       </div>
+       <div class="col-lg-4">
+        <input class="form-control" placeholder="Currency" formControlName="fromCurrency" maxlength="3" oninput="this.value = this.value.toUpperCase()">
+       </div>
+     </div>
+     <div class="row my-2">
+       <div class="col-lg-3 text-right">
+        <label class="font-weight-bold">To:</label>
+       </div>
+       <div class="col-lg-5">
+        <input class="form-control text-right" placeholder="amount" formControlName="toAmount" >
+       </div>
+       <div class="col-lg-4">
+        <input class="form-control" placeholder="Currency" formControlName="toCurrency" maxlength="3" oninput="this.value = this.value.toUpperCase()">
+       </div>
+     </div>
+     <div class="row">
+        <div class="col">
+          <input class="form-control text-right" placeholder="API Key" formControlName="apiKey" >
+        </div>
+     </div>
+     <br>
+     <div class="row">
+       <div class="form-group col-lg-12 text-center"> 
+        <button
+          class="btn btn-primary"
+          [disabled]="form.invalid" 
+          (click)="convert()">
+          CONVERT
+        </button>
+      </div>
+     </div>
+    </form>
+  </div>
+</div>

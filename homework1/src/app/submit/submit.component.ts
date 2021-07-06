@@ -7,9 +7,10 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 })
 export class SubmitComponent implements OnInit {
   form: FormGroup;
+
   constructor(private fb: FormBuilder) { 
     this.form = this.fb.group({
-      name: ['', Validators.required],
+      name: ['', Validators.required ],
       email: ['', [Validators.required, Validators.email]],
       postalAddress: ['', Validators.required],
       comments:''
@@ -17,12 +18,13 @@ export class SubmitComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  
   }
 
   submitForm() {
-
+    this.submitForm = this.submitForm
+    alert(JSON.stringify(this.form.value));
   }
-
   
   
 }
