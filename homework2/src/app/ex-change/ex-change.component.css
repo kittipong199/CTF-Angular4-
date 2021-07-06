@@ -1,31 +1,3 @@
-/*<form  []class="needs-validation" novalidate>
-    <div class="form-row">
-      <div class="col-md-4 mb-3 mx-sm-3">
-        <label for="validationTooltip01">From Amount</label>
-        <input type="text" class="form-control mx-sm-3" id="validationTooltip01" placeholder="amount"  required>
-        
-      </div>
-      <div class="col-md-4 mb-3 mx-sm-3">
-        <label for="validationTooltip02">From Currency</label>
-        <input type="text" class="form-control mx-sm-3" id="validationTooltip02" placeholder="currency ,THB,JPY,USD,EUR,CAD"  required>
-        
-      </div>
-      
-        </div>
-      
-    
-    <div class="form-row">
-      <div class="col-md-4 mb-3 mx-sm-3">
-        <label for="validationTooltip03">To Amount</label>
-        <input type="text" class="form-control mx-sm-3" id="validationTooltip03" placeholder="amount" required>
-        
-      </div>
-      <div class="col-md-4 mb-3 mx-sm-3">
-        <label for="validationTooltip04">To Currency</label>
-        <input type="text" class="form-control mx-sm-3 " id="validationTooltip04" placeholder="currency ,THB,JPY,USD,EUR,CAD" required>
-        
-      </div>
-      
-    </div>
-    <button class="btn btn-primary  mx-sm-3" type="submit">Submit</button>
-  </form>*/
+.col{
+  display: none;
+}

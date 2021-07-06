@@ -13,7 +13,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class ExChangeComponent implements OnInit {
   form: FormGroup;
-  fxData!: any[];
+  fxData!: any;
   //endpoint = 'latest'
   access_key = '1e4e63a14115a9c34a814cb40956a5e3';
  
@@ -26,6 +26,7 @@ export class ExChangeComponent implements OnInit {
       fromCurrency: ['', Validators.required], 
       fromAmount: ['', Validators.required], 
       toCurrency: ['', Validators.required], 
+      apiKey: ['1e4e63a14115a9c34a814cb40956a5e3', Validators.required], 
       toAmount: [''] 
     }); 
   }
@@ -37,10 +38,11 @@ export class ExChangeComponent implements OnInit {
   convert() {
     let fromCurrency = this.form.value.fromCurrency;
     let toCurrency = this.form.value.toCurrency;
+    let apiKey = this.form.value.apiKey;
     let fxRate = 0.0;
 
     this.httpClient
-    .get('https://api.exchangeratesapi.io/latest?access_key=${API_KEY}&symbols=${fromCurrency},${toCurrency}')
+    .get(`http://api.exchangeratesapi.io/v1/latest?access_key=${apiKey}&symbols=${fromCurrency},${toCurrency}`)
     .pipe(
       catchError(error => {
         return throwError(
